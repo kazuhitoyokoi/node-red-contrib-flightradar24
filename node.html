@@ -1,0 +1,37 @@
+<script type="text/javascript">
+    RED.nodes.registerType('flightradar24',{
+        category: 'function',
+        color: '#a6bbcf',
+        defaults: {
+            lat: { value: '', required: true },
+            lon: { value: '', required: true },
+            name: { value: '' }
+        },
+        inputs: 1,
+        outputs: 1,
+        icon: 'plane.svg',
+        label: function() {
+            return this.name || "flightradar24";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="flightradar24">
+    <div class="form-row">
+        <label for="node-input-lat"><i class="icon-tag"></i> Latitude</label>
+        <input type="text" id="node-input-lat" placeholder="51">
+    </div>
+    <div class="form-row">
+        <label for="node-input-lon"><i class="icon-tag"></i> Longitude</label>
+        <input type="text" id="node-input-lon" placeholder="-1.45">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+</script>
+
+<script type="text/x-red" data-help-name="flightradar24">
+    <p>This node retrieves plane locations from flightradar24 service.</p>
+    <p>After you input latitude and longitude in node property, this node gets all information about planes within 100km.</p>
+</script>
