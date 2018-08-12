@@ -4,7 +4,9 @@
         color: '#a6bbcf',
         defaults: {
             lat: { value: '', required: true },
+            latType: { value: 'num' },
             lon: { value: '', required: true },
+            lonType: { value: 'num' },
             name: { value: '' }
         },
         inputs: 1,
@@ -12,6 +14,18 @@
         icon: 'plane.svg',
         label: function() {
             return this.name || "flightradar24";
+        },
+        oneditprepare: function () {
+            $('#node-input-lat').typedInput({
+                default: 'num',
+                typeField: $('#node-input-latType'),
+                types: ['num', 'msg']
+            });
+            $('#node-input-lon').typedInput({
+                default: 'num',
+                typeField: $('#node-input-lonType'),
+                types: ['num', 'msg']
+            });
         }
     });
 </script>
@@ -20,10 +34,12 @@
     <div class="form-row">
         <label for="node-input-lat"><i class="icon-tag"></i> Latitude</label>
         <input type="text" id="node-input-lat" placeholder="51">
+        <input type="hidden" id="node-input-latType">
     </div>
     <div class="form-row">
         <label for="node-input-lon"><i class="icon-tag"></i> Longitude</label>
         <input type="text" id="node-input-lon" placeholder="-1.45">
+        <input type="hidden" id="node-input-lonType">
     </div>
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
