@@ -1,13 +1,13 @@
-node-red-contrib-flightradar21
+node-red-contrib-flightradar24
 =====================
 
-Node-RED node to retrieve plane locations from flightradar21 service.
+Node-RED node to retrieve plane locations from flightradar24 service.
 
 Install
 -------
 Run the following command in your Node-RED user directory - typically `~/.node-red`
 
-        npm install node-red-contrib-flightradar21
+        npm install node-red-contrib-flightradar24
 
 Example
 -------
