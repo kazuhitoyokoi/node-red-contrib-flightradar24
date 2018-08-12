@@ -1,7 +1,7 @@
 node-red-contrib-flightradar21
 =====================
 
-Node-RED node to retrieve plane location from flightradar21 service.
+Node-RED node to retrieve plane locations from flightradar21 service.
 
 Install
 -------
@@ -11,7 +11,7 @@ Run the following command in your Node-RED user directory - typically `~/.node-r
 
 Example
 -------
-You can plot plane locations on map using node-red-contrib-worldmap.
+You can plot plane locations on map using [node-red-contrib-web-worldmap](https://flows.nodered.org/node/node-red-contrib-web-worldmap).
 
 ![tokyo.gif](tokyo.gif)
 
