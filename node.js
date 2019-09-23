@@ -21,7 +21,7 @@ module.exports = function (RED) {
             var radius = 100000;
             radar(lat + 1, lon - 1, lat - 1, lon + 1).then(function (data) {
                 data.forEach(function (flight) {
-                    if (geolib.isPointInCircle(flight, { latitude: lat, longitude: lon }, radius)) {
+                    if (geolib.isPointWithinRadius(flight, { latitude: lat, longitude: lon }, radius)) {
                         msg.payload = flight;
                         msg.payload.lat = flight.latitude;
                         msg.payload.latitude = undefined;
