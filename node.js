@@ -27,7 +27,7 @@ module.exports = function (RED) {
                         msg.payload.latitude = undefined;
                         msg.payload.lon = flight.longitude;
                         msg.payload.longitude = undefined;
-                        msg.payload.name = flight.flight || flight.id;
+                        msg.payload.name = flight.flight || flight.registration || flight.modeSCode;
                         msg.payload.icon = "plane";
                         msg.payload.iconColor = "red";
                         node.send(msg);
