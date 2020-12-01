@@ -7,6 +7,8 @@
             latType: { value: 'num' },
             lon: { value: '', required: true },
             lonType: { value: 'num' },
+            rad: { value: '', required: true },
+            radType: { value: 'num' },
             name: { value: '' }
         },
         inputs: 1,
@@ -26,6 +28,12 @@
                 typeField: $('#node-input-lonType'),
                 types: ['num', 'msg']
             });
+            $('#node-input-rad').typedInput({
+                default: 'num',
+                typeField: $('#node-input-radType'),
+                types: ['num', 'msg']
+            });
+
         }
     });
 </script>
@@ -42,6 +50,12 @@
         <input type="hidden" id="node-input-lonType">
     </div>
     <div class="form-row">
+        <label for="node-input-rad"><i class="icon-tag"></i> Distance (meter)</label>
+        <input type="text" id="node-input-rad" placeholder="1000">
+        <input type="hidden" id="node-input-radType">
+    </div>
+
+    <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
@@ -49,5 +63,5 @@
 
 <script type="text/x-red" data-help-name="flightradar24">
     <p>This node retrieves plane locations from flightradar24 service.</p>
-    <p>After you input latitude and longitude in node property, this node gets all information about planes within 100km.</p>
+    <p>After you input latitude and longitude  and radius in node property, this node gets all information about planes within the radius.</p>
 </script>

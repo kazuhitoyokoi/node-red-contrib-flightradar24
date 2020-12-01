@@ -1,11 +1,12 @@
 var radar = require('flightradar24-client/lib/radar');
+var geolib = require('geolib')
 
 module.exports = function (RED) {
-    function Flightradar24Node(config) {
+    function Flightradar24NodePKO(config) {
         RED.nodes.createNode(this, config);
         var node = this;
         node.on('input', function (msg) {
-            var lat, lon;
+            var lat, lon, rad;
             if (config.latType === 'num') {
                 lat = Number(config.lat);
             } else {
@@ -16,9 +17,15 @@ module.exports = function (RED) {
             } else {
                 lon = Number(RED.util.getMessageProperty(msg, config.lon));
             }
+            if (config.radType === 'num') {
+                rad = Number(config.rad);
+            } else {
+                rad = Number(RED.util.getMessageProperty(msg, config.rad));
+            }
 
-            var radius = 100000;
-            radar(lat + 1, lon - 1, lat - 1, lon + 1).then(function (data) {
+            // calculate bounds
+            var bounds=geolib.getBoundsOfDistance( { latitude: lat, longitude: lon },rad );
+            radar(bounds[1].latitude, bounds[0].longitude, bounds[0].latitude, bounds[1].longitude).then(function (data) {
                 data.forEach(function (flight) {
                     var m = RED.util.cloneMessage(msg);
                     m.payload = flight;
@@ -37,5 +44,5 @@ module.exports = function (RED) {
             });
         });
     }
-    RED.nodes.registerType("flightradar24", Flightradar24Node);
+    RED.nodes.registerType("flightradar24", Flightradar24NodePKO);
 };

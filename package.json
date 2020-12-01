@@ -1,32 +1,61 @@
 {
-  "name": "node-red-contrib-flightradar24",
-  "version": "0.1.0",
-  "description": "Node-RED node to fetch aircraft data from Flightradar24",
-  "main": "node.js",
-  "node-red": {
-    "nodes": {
-      "flightradar24": "node.js"
-    }
+  "_from": "node-red-contrib-flightradar24@0.1.0",
+  "_id": "node-red-contrib-flightradar24@0.1.0",
+  "_inBundle": false,
+  "_integrity": "sha512-2NNxKV1mp9q0LQGlR0ntTtX42vd9eFAqAp74eq52QcmC67keErVqEevmtCGbTTd4P+tSVdXaCe+32Iw5/g3xgQ==",
+  "_location": "/node-red-contrib-flightradar24",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "node-red-contrib-flightradar24@0.1.0",
+    "name": "node-red-contrib-flightradar24",
+    "escapedName": "node-red-contrib-flightradar24",
+    "rawSpec": "0.1.0",
+    "saveSpec": null,
+    "fetchSpec": "0.1.0"
   },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/node-red-contrib-flightradar24/-/node-red-contrib-flightradar24-0.1.0.tgz",
+  "_shasum": "4ffa3f185083cda2aee12e8b4792a0f16bbd0d1d",
+  "_spec": "node-red-contrib-flightradar24@0.1.0",
+  "_where": "/data",
+  "author": {
+    "name": "zuhito"
+  },
+  "bugs": {
+    "url": "https://github.com/zuhito/node-red-contrib-flightradar24/issues"
+  },
+  "bundleDependencies": false,
   "dependencies": {
-    "flightradar24-client": "0.3.0"
+    "flightradar24-client": "0.3.0",
+    "geolib": "^3.3.1"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/zuhito/node-red-contrib-flightradar24.git"
-  },
+  "deprecated": false,
+  "description": "Node-RED node to fetch aircraft data from Flightradar24",
+  "homepage": "https://github.com/zuhito/node-red-contrib-flightradar24#readme",
   "keywords": [
     "node-red",
     "flight",
     "flightradar24"
   ],
-  "author": "zuhito",
   "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/zuhito/node-red-contrib-flightradar24/issues"
+  "main": "node.js",
+  "name": "node-red-contrib-flightradar24",
+  "node-red": {
+    "nodes": {
+      "flightradar24": "node.js"
+    }
   },
-  "homepage": "https://github.com/zuhito/node-red-contrib-flightradar24#readme"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zuhito/node-red-contrib-flightradar24.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "0.1.0"
 }

@@ -3,6 +3,9 @@ node-red-contrib-flightradar24
 
 Node-RED node to retrieve plane locations from flightradar24 service.
 
+Ph Koenig addendum:
+set a square distance around lat/long to get a specific number of plane
+
 Install
 -------
 Run the following command in your Node-RED user directory - typically `~/.node-red`
