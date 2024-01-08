@@ -1,0 +1,97 @@
+[
+    {
+        "id": "d6e401a90faf04b8",
+        "type": "debug",
+        "z": "ac0a6e6579e2eea3",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 200,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "3ca0ab73e4bd6dc5",
+        "type": "inject",
+        "z": "ac0a6e6579e2eea3",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "1",
+        "crontab": "",
+        "once": true,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 200,
+        "y": 160,
+        "wires": [
+            [
+                "221dec9932c97445"
+            ]
+        ]
+    },
+    {
+        "id": "5ce452ccd74bbf94",
+        "type": "worldmap",
+        "z": "ac0a6e6579e2eea3",
+        "name": "",
+        "lat": "",
+        "lon": "",
+        "zoom": "",
+        "layer": "",
+        "cluster": "",
+        "maxage": "",
+        "usermenu": "show",
+        "layers": "show",
+        "panit": "false",
+        "panlock": "false",
+        "zoomlock": "false",
+        "hiderightclick": "false",
+        "coords": "false",
+        "showgrid": "false",
+        "showruler": "false",
+        "allowFileDrop": "false",
+        "path": "/worldmap",
+        "overlist": "DR,CO,RA,DN",
+        "maplist": "OSMG,OSMC,EsriC,EsriS,UKOS",
+        "mapname": "",
+        "mapurl": "",
+        "mapopt": "",
+        "mapwms": false,
+        "x": 400,
+        "y": 240,
+        "wires": []
+    },
+    {
+        "id": "221dec9932c97445",
+        "type": "flightradar24",
+        "z": "ac0a6e6579e2eea3",
+        "lat": "51",
+        "latType": "num",
+        "lon": "-1.45",
+        "lonType": "num",
+        "name": "",
+        "x": 210,
+        "y": 240,
+        "wires": [
+            [
+                "d6e401a90faf04b8",
+                "5ce452ccd74bbf94"
+            ]
+        ]
+    }
+]

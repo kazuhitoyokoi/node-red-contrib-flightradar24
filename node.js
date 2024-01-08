@@ -1,4 +1,5 @@
-var radar = require('flightradar24-client/lib/radar');
+// Used the code on https://github.com/UnclePhil/node-red-contrib-fr24tube/blob/815d0d138970d4e76768b8cb53bfb8c091e4e4ae/node.js#L1
+const radar = (...args) => import('flightradar24-client').then(({ fetchFromRadar }) => fetchFromRadar(...args));
 
 module.exports = function (RED) {
     function Flightradar24Node(config) {
