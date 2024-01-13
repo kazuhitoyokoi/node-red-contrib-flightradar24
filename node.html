@@ -3,10 +3,13 @@
         category: 'function',
         color: '#a6bbcf',
         defaults: {
-            lat: { value: '', required: true },
+            lat: { value: '51', required: true },
             latType: { value: 'num' },
-            lon: { value: '', required: true },
+            lon: { value: '-1.45', required: true },
             lonType: { value: 'num' },
+            rad: { value: '100', required: true },
+            radType: { value: 'num' },
+            interval: { value: true, required: true },
             name: { value: '' }
         },
         inputs: 1,
@@ -26,11 +29,19 @@
                 typeField: $('#node-input-lonType'),
                 types: ['num', 'msg']
             });
+            $('#node-input-rad').typedInput({
+                default: 'num',
+                typeField: $('#node-input-radType'),
+                types: ['num', 'msg']
+            });
+            $('#node-input-interval').on("change", function () {
+                $("#node-input-inputs").val($('#node-input-interval').val() ? 0 : 1);
+            });
         }
     });
 </script>
 
-<script type="text/x-red" data-template-name="flightradar24">
+<script type="text/html" data-template-name="flightradar24">
     <div class="form-row">
         <label for="node-input-lat"><i class="icon-tag"></i> Latitude</label>
         <input type="text" id="node-input-lat" placeholder="51">
@@ -42,12 +53,22 @@
         <input type="hidden" id="node-input-lonType">
     </div>
     <div class="form-row">
+        <label for="node-input-rad"><i class="icon-tag"></i> Distance (km)</label>
+        <input type="text" id="node-input-rad" placeholder="10">
+        <input type="hidden" id="node-input-radType">
+    </div>
+    <div class="form-row">
+        <label for="node-input-interval"><i class="icon-tag"></i> Interval</label>
+        <input type="checkbox" id="node-input-interval">
+        <input type="hidden" id="node-input-interval">
+    </div>
+    <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
     </div>
 </script>
 
-<script type="text/x-red" data-help-name="flightradar24">
+<script type="text/html" data-help-name="flightradar24">
     <p>This node retrieves plane locations from flightradar24 service.</p>
-    <p>After you input latitude and longitude in node property, this node gets all information about planes within 100km.</p>
+    <p>After you input latitude and longitude  and radius in node property, this node gets all information about planes within the radius.</p>
 </script>

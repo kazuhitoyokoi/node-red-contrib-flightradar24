@@ -1,6 +1,6 @@
 {
   "name": "node-red-contrib-flightradar24",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Node-RED node to fetch aircraft data from Flightradar24",
   "main": "node.js",
   "engines": {
@@ -13,7 +13,8 @@
     }
   },
   "dependencies": {
-    "flightradar24-client": "1.0.1"
+    "flightradar24-client": "1.0.1",
+    "geolib": "3.3.4"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
