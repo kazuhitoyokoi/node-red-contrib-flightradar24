@@ -10,9 +10,10 @@
             rad: { value: '100', required: true },
             radType: { value: 'num' },
             interval: { value: true, required: true },
+            inputs: { value: 0 },
             name: { value: '' }
         },
-        inputs: 1,
+        inputs: 0,
         outputs: 1,
         icon: 'font-awesome/fa-plane',
         label: function() {
@@ -35,7 +36,7 @@
                 types: ['num', 'msg']
             });
             $('#node-input-interval').on("change", function () {
-                $("#node-input-inputs").val($('#node-input-interval').val() ? 0 : 1);
+                $("#node-input-inputs").val(this.checked ? 0 : 1);
             });
         }
     });
@@ -54,13 +55,14 @@
     </div>
     <div class="form-row">
         <label for="node-input-rad"><i class="icon-tag"></i> Distance (km)</label>
-        <input type="text" id="node-input-rad" placeholder="10">
+        <input type="text" id="node-input-rad" placeholder="100">
         <input type="hidden" id="node-input-radType">
     </div>
     <div class="form-row">
         <label for="node-input-interval"><i class="icon-tag"></i> Interval</label>
         <input type="checkbox" id="node-input-interval">
         <input type="hidden" id="node-input-interval">
+        <input type="hidden" id="node-input-inputs">
     </div>
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
